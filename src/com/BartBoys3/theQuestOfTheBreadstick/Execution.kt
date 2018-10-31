@@ -20,8 +20,8 @@ fun rest(returnQuest: Int) {
 fun quest0(anwser: Int, quest: Int) {
     when (anwser) {
         /*1 ->
-        2 ->
-        3 ->*/
+        2 ->*/
+       // 3 ->
         4 -> rest(quest)
         /*5 ->
     */}
