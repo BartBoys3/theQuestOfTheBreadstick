@@ -11,7 +11,7 @@ val opttext= "Select an option."
 fun main(args: Array<String>) {
     println("Welcome to "+ title)
     println("Enter the name of the hero:")
-    val heroname = readLine().toString()
+    TextV heroname = readLine().toString()
     startgame()
 }
 
