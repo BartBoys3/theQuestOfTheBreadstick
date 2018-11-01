@@ -1,8 +1,7 @@
 package com.BartBoys3.theQuestOfTheBreadstick
-
-fun textVars(args: Array<String>) {
+val viewGear = "You looked in your ${storageEquip}."
+object textVars() {
+    @JvmStatic
     val enterTheForest = ""
     val hunt1 = ""
-    val viewGear = "You looked in your ${storageEquip}."
-    
 }

@@ -19,9 +19,9 @@ fun rest(returnQuest: Int) {
 }
 fun quest0(anwser: Int, quest: Int) {
     when (anwser) {
-        /*1 ->
-        2 ->*/
-       // 3 ->
+        //1 ->
+        2 -> println(viewGear)
+        3 -> println()
         4 -> rest(quest)
         /*5 ->
     */}
