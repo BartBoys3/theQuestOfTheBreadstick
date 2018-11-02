@@ -4,11 +4,12 @@ import kotlin.collections.ArrayList
 import kotlin.math.absoluteValue
     val title = "The Quest Of The Breadstick"
     var day: Short = 1
-    var optdb: MutableList<Int> = ArrayList<Int>()
+    var optdb: MutableList<Int> = ArrayList<Int>(255)
     var heroname:String? = null
     val opttext = "Select an option."
     fun main(args: Array<String>) {
         println("Welcome to " + title)
+        println("do not enter anything stupid into a prompt or else the game is very likely to terminate.".toUpperCase())
         Heraname.startgame()
     }
 
@@ -50,6 +51,8 @@ import kotlin.math.absoluteValue
          println("Your journey starts in the small village of Hickory Peaks.")
          println("You gotta defeat some evil dude to get back your breadstick.")
          println()
+         Gear.Inv.inventoryString.add(0, "Bomb")
+         Gear.Inv.itemCount.add(0, 20)
          askQuest(0)
 
      }
