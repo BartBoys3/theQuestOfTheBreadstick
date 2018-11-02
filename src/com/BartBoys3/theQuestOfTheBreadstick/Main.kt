@@ -51,8 +51,7 @@ import kotlin.math.absoluteValue
          println("Your journey starts in the small village of Hickory Peaks.")
          println("You gotta defeat some evil dude to get back your breadstick.")
          println()
-         Gear.Inv.inventoryString.add(0, "Bomb")
-         Gear.Inv.itemCount.add(0, 20)
+         Gear.Inv.itemGet("Stick", 20)
          askQuest(0)
 
      }

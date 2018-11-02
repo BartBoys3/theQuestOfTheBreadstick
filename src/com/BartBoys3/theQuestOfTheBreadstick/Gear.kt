@@ -11,5 +11,9 @@ object Gear {
     object Inv{
         var inventoryString: MutableList<String> = ArrayList()
         var itemCount: MutableList<Int> = ArrayList()
+        fun itemGet(item: String, quantity: Int) {
+            inventoryString.add(item)
+            itemCount.add(inventoryString.lastIndex,quantity)
+        }
     }
 }
