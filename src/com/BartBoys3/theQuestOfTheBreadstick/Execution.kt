@@ -1,5 +1,6 @@
 package com.BartBoys3.theQuestOfTheBreadstick
 
+import javax.swing.text.html.parser.Element
 import kotlin.math.absoluteValue
 
 fun select(questToExec: Int) {
@@ -17,11 +18,16 @@ fun rest(returnQuest: Int) {
     addDay(daysToRest)
     askQuest(returnQuest)
 }
+fun gear() {
+    println(TextVars.viewGear)
+    println("Helmet: ${Gear.helmet}\nChestpiece: ${Gear.chest}\nLegs: ${Gear.legs}\nFeet: ${Gear.boots}\nMelee Weapon: ${Gear.melee}\nRanged Weapon: ${Gear.ranged}")
+    println("Inventory: "); Gear.Inv.inventoryString.forEach { println(it+" x"+"${Gear.Inv.itemCount[Gear.Inv.inventoryString.lastIndex]}") }
+}
 fun quest0(anwser: Int, quest: Int) {
     when (anwser) {
         //1 ->
-        2 -> println(viewGear)
-        3 -> println()
+        2 -> gear()
+        //3 ->
         4 -> rest(quest)
         /*5 ->
     */}
