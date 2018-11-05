@@ -6,6 +6,8 @@ import kotlin.math.absoluteValue
     var day: Short = 1
     var optdb: MutableList<Int> = ArrayList<Int>(255)
     var heroname:String? = null
+    var negativeQuestTempStorage: Int = 0
+    var health = 1000.00
     val opttext = "Select an option."
     fun main(args: Array<String>) {
         println("Welcome to " + title)
@@ -14,7 +16,7 @@ import kotlin.math.absoluteValue
     }
 
     fun optmenu(opts: Array<String>, questnum: Int) {
-        println("The Day is " + day)
+        if (questnum >= 0) {println("The Day is " + day)}
         println(opttext)
         println("1. ${opts[0]}")
         println("2. ${opts[1]}")
@@ -22,13 +24,9 @@ import kotlin.math.absoluteValue
         println("4. ${opts[3]}")
         println("5. ${opts[4]}")
         println("Number Here")
-        optdb.add(0)
-        optdb[questnum] = readLine().toString().toInt()
-        afterOpt(questnum)
-    }
-
-    fun afterOpt(lastQuest: Int) {
-        select(lastQuest)
+        if (questnum >= 0) {optdb.add(questnum, readLine().toString().toInt())}
+        else {negativeQuestTempStorage = readLine().toString().toInt()}
+        select(questnum)
     }
 
     fun addDay(n: Int) {
@@ -52,6 +50,7 @@ import kotlin.math.absoluteValue
          println("You gotta defeat some evil dude to get back your breadstick.")
          println()
          Gear.Inv.itemGet("Stick", 20)
+         Gear.Inv.itemGet("Sticki", 20)
          askQuest(0)
 
      }

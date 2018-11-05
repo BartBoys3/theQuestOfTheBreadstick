@@ -7,6 +7,7 @@ fun askQuest(num: Int) {
         3 -> optmenu(arrayOf("Hunt", "View Gear", "Enter Forest", "N/A", "N/A"),num)
         4 -> optmenu(arrayOf("Hunt", "View Gear", "Enter Forest", "N/A", "N/A"),num)
         5 -> optmenu(arrayOf("Hunt", "View Gear", "Enter Forest", "N/A", "N/A"),num)
+        -1 -> optmenu(arrayOf("Toss","N/A","N/A","N/A","Exit to Previous Options Menu."),num)
         else -> {
             println("OPTION_PASSING_EXECPTION")
         }

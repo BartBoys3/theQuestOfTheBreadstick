@@ -15,5 +15,12 @@ object Gear {
             inventoryString.add(item)
             itemCount.add(inventoryString.lastIndex,quantity)
         }
+        fun tossItem(item: String, quantity: Int) {
+            itemCount[inventoryString.indexOf(item)] = (itemCount[inventoryString.indexOf(item)])-quantity
+            if (itemCount[inventoryString.indexOf(item)] <= 0) {
+                itemCount.removeAt(itemCount[inventoryString.indexOf(item)])
+                inventoryString.remove(item)
+            }
+        }
     }
 }
