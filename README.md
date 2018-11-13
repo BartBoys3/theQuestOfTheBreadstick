@@ -3,16 +3,16 @@ a personal project involving a command-line game titled "The Quest Of The Breads
 
 - Table of Contents:
     -
-- src.com.BartBoys3.theQuestOfTheBreadstick:
+- Package: src.com.BartBoys3.theQuestOfTheBreadstick:
     - Main.kt
-    - Gear.kt
-        - object Gear
-            - object Gear.Inv
-    - TextVars.kt
-         - object TextVars
+    - object: Gear.kt
+        - object: Gear.Ivn
+    - object: TextVars.kt
     - Questions.kt
     - Execution.kt
     - testing.kt
-    - Fights.kt
-        - object Fights
+    - Package: ./Fights
+         - object: WhooshyWasps.kt    
+       
+        
     

@@ -22,7 +22,7 @@ fun rest(returnQuest: Int) {
 fun gear(ogQuest: Int) {
     println(TextVars.viewGear)
     println("Helmet: ${Gear.helmet}\nChestpiece: ${Gear.chest}\nLegs: ${Gear.legs}\nFeet: ${Gear.boots}\nMelee Weapon: ${Gear.melee}\nRanged Weapon: ${Gear.ranged}")
-    println("Inventory: "); Gear.Inv.inventoryString.forEach { println(it+" x"+"${Gear.Inv.itemCount[Gear.Inv.inventoryString.lastIndex]}") }
+    println("Inventory: "); Gear.Inv.inventoryString.forEach { println(it+" x"+Gear.Inv.itemCount[Gear.Inv.inventoryString.indexOf(it)]) }
     negativeOgQuest = ogQuest
     askQuest(-1)
 }
@@ -40,7 +40,8 @@ fun invOptsMenuExec(anwser: Int, quest: Int) {
         1 -> {println("Enter the EXACT name of the item you want to toss. (Case Sensitive)")
             var tossItemTemp = readLine().toString()
         println("Enter the amount of that item you want to toss in standard form. eg: 6 not six.")
-        Gear.Inv.tossItem(tossItemTemp,readLine().toString().toInt())
+            var tossQuantTemp = readLine().toString().toInt()
+        Gear.Inv.tossItem(tossItemTemp,tossQuantTemp)
         askQuest(-1)}
         2 -> {println("Invalid Option"); askQuest(quest)}
         3 -> {println("Invalid Option"); askQuest(quest)}
