@@ -1,7 +1,7 @@
 package com.BartBoys3.theQuestOfTheBreadstick
 
 object Gear {
-    var storageEquip = "Backpack"
+    var storageEquip = "${heroname}'s Backpack"
     var helmet = "${heroname}'s Dirty Baseball Cap"
     var chest = "${heroname}'s T-Shirt"
     var legs = "${heroname}'s Basketball Shorts"
