@@ -49,3 +49,6 @@ fun invOptsMenuExec(anwser: Int, quest: Int) {
         5 -> {askQuest(negativeOgQuest)}
     }
 }
+fun fightMenuInit(){
+
+}

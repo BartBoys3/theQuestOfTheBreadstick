@@ -18,9 +18,10 @@ import kotlin.math.absoluteValue
     val sequencer = MidiSystem.getSequencer()
     fun main(args: Array<String>) {
         println("Welcome to " + title)
-        globalFuns.StartMidi("U6-BOOT.midi")
+        globalFuns.StartMidi(musicVars.mainTheme)
         println("Press enter to contiune")
         val x = readLine().toString()
+        sequencer.close()
         println("do not enter anything stupid into a prompt or else the game is very likely to terminate.".toUpperCase())
         Heraname.startgame()
     }
@@ -66,6 +67,5 @@ object Heraname {
         Gear.Inv.itemGet("Stick", 20)
         Gear.Inv.itemGet("Sticki", 20)
         askQuest(0)
-        var z = heroname.toCharArray()
     }
 }

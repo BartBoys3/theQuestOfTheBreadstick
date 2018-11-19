@@ -11,5 +11,6 @@ object globalFuns {
         inputStream = BufferedInputStream(FileInputStream(File("c:/users/bartboys3/music/${FileMusicDir}")))
         sequencer.setSequence(inputStream)
         sequencer.start()
+
     }
 }

@@ -5,3 +5,7 @@ package com.BartBoys3.theQuestOfTheBreadstick
         val hunt1 = ""
         val viewGear = "You looked in your ${Gear.storageEquip}."
     }
+
+    object musicVars {
+        val mainTheme = "tQotBs-TitleTheme.mid"
+    }
