@@ -1,35 +1,21 @@
 package com.BartBoys3.theQuestOfTheBreadstick
 
-import jdk.jfr.Percentage
+import java.lang.reflect.*
+import java.util.stream.Collector
+import kotlin.reflect.KCallable
+import kotlin.reflect.jvm.kotlinProperty
 
-class BattleMoves {
-
-    open inner class Attack(damage: Double,critical: Double,hitRate: Double) {
-
-        open inner class MeleeAttack(damage: Double,critical: Double,hitRate: Double) {
-            var headbutt = MeleeAttack(20.00,5.00,95.00)
-        }
-
-        open inner class WeaponAttack(damage: Double,critical: Double,hitRate: Double) {
-
-        }
-
+open class MeleeAttack (attackName: String = "nill",damage: Double = 0.0, recoilMultiplier: Double = 0.0,critChance: Double = 0.0,missChance: Double = 0.0) {
+    //open class Headbutt : MeleeAttack("Headbutt", 12.0, 0.0, 10.0, 0.0)
+    open class StandardPunch : MeleeAttack() {
+        val attackName = "Standard Punch"
     }
-
-    inner class DefenseMove {
-
-    }
-
-    inner class MagicMove {
-
-        inner class MagicAttack(damage: Double,critical: Double,hitRate: Double) {
-            var flames = MagicAttack(15.00,10.00,85.00)
-        }
-
-    }
-
-    inner class Item {
-
-    }
-
 }
+fun initMeleeAttacks(): Array<out Class<*>> {
+    var meleeAttacks = MeleeAttack().javaClass.nestMembers
+    return meleeAttacks
+}
+
+
+
+

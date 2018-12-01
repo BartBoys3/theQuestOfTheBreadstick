@@ -5,14 +5,12 @@ a personal project involving a command-line game titled "The Quest Of The Breads
     -
 - Package: src.com.BartBoys3.theQuestOfTheBreadstick:
     - Main.kt
-    - object: Gear.kt
-        - object: Gear.Ivn
-    - object: TextVars.kt
+    - Gear.kt
+    - TextVars.kt
+    - BattleMoves.kt
     - Questions.kt
     - Execution.kt
     - testing.kt
-    - Package: ./Fights
-         - object: WhooshyWasps.kt    
-       
-        
-    
+    - Package: Fights
+         - WhooshyWasps.kt    
+    - FightExec.kt

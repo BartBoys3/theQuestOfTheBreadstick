@@ -18,13 +18,13 @@ object Gear {
         }
 
         fun tossItem(item: String, quantity: Int) {
-            if (quantity >= 0) {
+            if (quantity < 0) { println("You are not allowed to toss items in negitave quantities.")}
+                else {
                 itemCount[inventoryString.indexOf(item)] = ((itemCount[inventoryString.indexOf(item)]) - quantity)
                 if (itemCount[inventoryString.indexOf(item)] <= 0) {
                     itemCount.removeAt(itemCount[inventoryString.indexOf(item)])
                     inventoryString.remove(item)
                 }
-            else { println("You are not allowed to toss items in negitave quantities.") }
             }
         }
     }
