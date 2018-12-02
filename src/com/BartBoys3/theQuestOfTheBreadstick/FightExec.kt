@@ -2,13 +2,17 @@ package com.BartBoys3.theQuestOfTheBreadstick
 
 import java.awt.Graphics
 import java.lang.NumberFormatException
+import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
+import kotlin.reflect.jvm.kotlinFunction
+import kotlin.reflect.jvm.kotlinProperty
 
-fun fightScene(badsName: String = "NAME_NOT_PASSED",currentTurn: Int = 1, playerInit: Boolean = false, battleMenu: String = "MENU_NOT_PASSED") {
+fun fightScene(badsName: String = "NAME_NOT_PASSED",currentTurn: Int = 1, playerInit: Boolean = false, battleMenu: String = "MENU_NOT_PASSED", badsHealth: Double = 1000.00) {
     var currentTurnVar = currentTurn
-    if (playerInit==false) {var fightInitTemp = badsName; var fightInitOnTemp = "You"; // <- player init fight on bad v.s. bad init fight on player
-        println("${fightInitTemp} Initaited a fight against ${fightInitOnTemp}")}      // <-
-    else {var fightInitTemp = "You"; var fightInitOnTemp = badsName;                   // <-
-        println("${fightInitTemp} Initaited a fight against ${fightInitOnTemp}")}      // <-
+    var badsHealthVar = badsHealth
+    if (playerInit==false) {
+    println("${badsName} initaited a fight against ${heroname}")}
+    else {println("${heroname} initaited a fight against ${badsName}")}
+
 
     fun BattleMenu(): Int {
         println(battleMenu)
@@ -33,14 +37,37 @@ fun fightScene(badsName: String = "NAME_NOT_PASSED",currentTurn: Int = 1, player
         currentTurnVar++
         return battleChoiceToInt
     }
+    var attackNameTemp = "Could Not Assign Name"
     var returnedBattleChoice = BattleMenu()
+    var clazz: MeleeAttack = MeleeAttack()
+    var objact = Java.objclazz(MeleeAttack())
     when (returnedBattleChoice) {
-        1 -> initMeleeAttacks().forEach { class tempClass () }
+        1 -> initMeleeAttacks().forEach { it.fields.forEach { println(it.get(objact)) } }
         2 -> println()
         3 -> println()
         4 -> println()
         5 -> println()
         6 -> println()
     }
-
+    fun attackSequence(attack: MeleeAttack) {
+        var tempCritFlag = false
+        var tempLocalDamage = attack.damage
+        var tempMissFlag = false
+        println("$heroname used ${attack.attackName}")
+        if (IntRange(1,100).random()<=attack.criticalChance) {tempCritFlag = true; tempLocalDamage*1.25}
+        if (IntRange(1,100).random()>attack.accuracy) {tempMissFlag = true}
+        if (tempMissFlag) {
+             println("The attack missed!")
+        }
+        else  {
+            if (tempCritFlag) {
+                    println("Cirtical Hit!!")
+            }
+            badsHealthVar-tempLocalDamage
+            if (attack.recoilMultiplier>0.0) {
+                println("$heroname got damaged by recoil!")
+                health-(tempLocalDamage*attack.recoilMultiplier)
+            }
+        }
+    }
 }

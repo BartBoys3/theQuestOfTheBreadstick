@@ -66,7 +66,7 @@ val title = "The Quest Of The Breadstick"
 object Heraname {
     fun startgame() {
         println("Enter the name of the hero:")
-        val heroname = readLine().toString()
+        val heroname = readLine().toString().capitalize()
         println("Your journey starts in the small village of Hickory Peaks.")
         println("You gotta defeat some evil dude to get back your breadstick.")
         println()
