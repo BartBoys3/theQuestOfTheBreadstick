@@ -15,7 +15,7 @@ object ASCIIart {
                         "#         ()&_---()&\\\\\\\\&////|&&-&&--%---()~                                #\n" +
                         "#             &&    \\\\|||//                                                 #\n" +
                         "#                     |||                                                   #\n" +
-                        "#                     |||               1.MELEE ATTACKS 2.WEAPON ATTACKS    #\n" +
+                        "#                     |||               1.ATTACKS       2.PARTY             #\n" +
                         "#                     |||               3.MAGIC         4.ITEMS             #\n" +
                         "#               , -=-~  .-^- _                                              #\n" +
                         "#                 `                                                         #\n" +

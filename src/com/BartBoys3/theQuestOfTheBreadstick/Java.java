@@ -6,7 +6,7 @@ import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType;
 import java.util.Objects;
 
 public class Java {
-    public static Object objclazz(MeleeAttack c) {
+    public static Object objclazz(Attack c) {
         return (Object)c;
     }
 }

@@ -21,8 +21,10 @@ val title = "The Quest Of The Breadstick"
     var inputStream: InputStream? = null
     val sequencer = MidiSystem.getSequencer()
     fun main(args: Array<String>) {
+        var attack = Attack()
+        headbutt
+        attackList.forEach { println("${it.attackName} ${it.criticalChance}") }
         //GUIinit.main(arrayOf("Sample Text"))      //<- Will potentailly come back to GUI later.
-        println(32.toString().toBigDecimalOrNull())
         println("Welcome to " + title)
         globalFuns.StartMidi(MusicVars.mainTheme)
         println("Press enter to contiune")
@@ -66,7 +68,7 @@ val title = "The Quest Of The Breadstick"
 object Heraname {
     fun startgame() {
         println("Enter the name of the hero:")
-        val heroname = readLine().toString().capitalize()
+        heroname = readLine().toString().capitalize()
         println("Your journey starts in the small village of Hickory Peaks.")
         println("You gotta defeat some evil dude to get back your breadstick.")
         println()

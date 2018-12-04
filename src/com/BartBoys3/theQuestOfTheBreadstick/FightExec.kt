@@ -2,6 +2,7 @@ package com.BartBoys3.theQuestOfTheBreadstick
 
 import java.awt.Graphics
 import java.lang.NumberFormatException
+import java.lang.reflect.Field
 import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
 import kotlin.reflect.jvm.kotlinFunction
 import kotlin.reflect.jvm.kotlinProperty
@@ -39,23 +40,22 @@ fun fightScene(badsName: String = "NAME_NOT_PASSED",currentTurn: Int = 1, player
     }
     var attackNameTemp = "Could Not Assign Name"
     var returnedBattleChoice = BattleMenu()
-    var clazz: MeleeAttack = MeleeAttack()
-    var objact = Java.objclazz(MeleeAttack())
+    var it1: Field
     when (returnedBattleChoice) {
-        1 -> initMeleeAttacks().forEach { it.fields.forEach { println(it.get(objact)) } }
+        1 -> println(0)
         2 -> println()
         3 -> println()
         4 -> println()
         5 -> println()
         6 -> println()
     }
-    fun attackSequence(attack: MeleeAttack) {
+    /*fun attackSequence(attack: Attack) {
         var tempCritFlag = false
-        var tempLocalDamage = attack.damage
+        var tempLocalDamage = attack
         var tempMissFlag = false
-        println("$heroname used ${attack.attackName}")
-        if (IntRange(1,100).random()<=attack.criticalChance) {tempCritFlag = true; tempLocalDamage*1.25}
-        if (IntRange(1,100).random()>attack.accuracy) {tempMissFlag = true}
+        println("$heroname used ${attack}")
+        if (IntRange(1,100).random()<=attack) {tempCritFlag = true; tempLocalDamage*1.25}
+        if (IntRange(1,100).random()>attack) {tempMissFlag = true}
         if (tempMissFlag) {
              println("The attack missed!")
         }
@@ -69,5 +69,5 @@ fun fightScene(badsName: String = "NAME_NOT_PASSED",currentTurn: Int = 1, player
                 health-(tempLocalDamage*attack.recoilMultiplier)
             }
         }
-    }
+    }*/
 }
